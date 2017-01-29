@@ -1,0 +1,43 @@
+API Design Review [rb265, ghb5]
+===============================
+
+# Part 1
+
+## What about your API/design is intended to be flexible?
+* My API design is intended to allow the graphics side of the program only require the absolutely necessary information from the model
+in order to give how the view is displayed flexibility
+
+## How is your API/design encapsulating your implementation decisions?
+* My design would allow the controller to getCommandBlockInput() method that would return the necessary input for the parser to determine
+which command is being called. For example, for the use of a command line this would return the String text input that Commands would be parsed
+from.
+
+## What exceptions (error cases) might occur in your part and how will you handle them (or not, by throwing)?
+* Improper input might occur in the Graphics side. The parser would then determine if there is an error and return a ErrorCommandPacket that contains
+an error, which the graphic would display.
+
+## Why do you think your API/design is good (also define what your measure of good is)?
+* I think my API/design is good because it defines the bare minimum interaction between the different parts of the project. This is good because
+it allows for flexibility for each develop to define their part of the project in the manner they want, while also ensuring each part will mesh
+together.
+
+# Part 2
+
+## Come up with at least five use cases for your part (it is absolutely fine if they are useful for both teams).
+1. User types an invalid commands
+2. User types a valid command and no errors are thrown on the back end
+3. User types a valid command and an error is thrown on the back end 
+4. User wants to change the pen color in the code
+5. User wants to upload a new image for the turtle
+6. User wants to see current defined commands in the environment
+7. User wants to see current instantiated variables
+
+## How do you think at least one of the "advanced" Java features will help you implement your design?
+* Use the observer pattern to determine when the view needs to be updated or when an error is thrown
+
+## What feature/design problem are you most excited to work on?
+* Parsing the input from the graphics into new commands
+
+## What feature/design problem are you most worried about working on?
+* Managing multiple turtles
+
